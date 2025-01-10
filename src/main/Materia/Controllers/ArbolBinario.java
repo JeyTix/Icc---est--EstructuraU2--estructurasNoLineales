@@ -3,12 +3,7 @@ package main.Materia.Controllers;
 import main.Materia.Models.Node;
 
 public class ArbolBinario {
-
     private Node root;
-
-    
-    
-    
     public void insert(int value){
         root = insert(root, value);
     }
@@ -16,15 +11,12 @@ public class ArbolBinario {
     private Node insert(Node node, int value){
         if(node == null)
             return new Node(value);
-        
         if(value < node.getValue()){
             node.setLeft(insert(node.getLeft(), value));
         }
-
         if(value > node.getValue()){
             node.setRight(insert(node.getRight(), value));
         }
-
         return node;
     }
 
