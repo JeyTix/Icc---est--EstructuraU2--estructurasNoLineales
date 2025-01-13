@@ -10,6 +10,11 @@ public class ArbolAVL {
         root = insert(root, value);
     }
 
+    public Node getRoot() {
+        return root;
+    }
+    
+
     private Node insert(Node node, int value) {
         if (node == null) {
             Node newNode = new Node(value);
