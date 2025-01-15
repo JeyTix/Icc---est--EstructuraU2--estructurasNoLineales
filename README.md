@@ -43,8 +43,8 @@ Descripción: Este ejercicio calcula la profundidad máxima de un árbol binario
 4. **Impresión de la profundidad:** Al final, se imprime la profundidad máxima del árbol binario.
 
 ***Resumen Final de los Ejercicios:***
-**Ejercicio 1:** Inserta nodos en un árbol binario de búsqueda y lo imprime.
-**Ejercicio 2:** Inserta nodos, invierte el árbol y lo imprime en su estado original e invertido.
-**Ejercicio 3:** Imprime los nodos del árbol por niveles.
-**Ejercicio 4:** Calcula e imprime la profundidad máxima del árbol.
+- **Ejercicio 1:** Inserta nodos en un árbol binario de búsqueda y lo imprime.
+- **Ejercicio 2:** Inserta nodos, invierte el árbol y lo imprime en su estado original e invertido.
+- **Ejercicio 3:** Imprime los nodos del árbol por niveles.
+- **Ejercicio 4:** Calcula e imprime la profundidad máxima del árbol.
 Cada ejercicio tiene su propia clase auxiliar (InsertBSTTEST, InvertBinaryTree, ListLeves, Depth), las cuales realizan tareas específicas como insertar nodos, invertir el árbol, listar nodos por niveles y calcular la profundidad máxima.
