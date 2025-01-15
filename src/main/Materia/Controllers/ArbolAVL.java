@@ -14,7 +14,6 @@ public class ArbolAVL {
         return root;
     }
     
-
     private Node insert(Node node, int value) {
         if (node == null) {
             Node newNode = new Node(value);

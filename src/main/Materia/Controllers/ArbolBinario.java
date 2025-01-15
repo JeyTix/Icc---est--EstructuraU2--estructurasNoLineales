@@ -8,6 +8,11 @@ public class ArbolBinario {
         root = insert(root, value);
     }
 
+    public void setRoot(Node root) {
+        this.root = root;
+    }
+    
+
     private Node insert(Node node, int value){
         if(node == null)
             return new Node(value);
@@ -23,6 +28,7 @@ public class ArbolBinario {
     public void printTree(){
         printTreeNode2(root, " ", true );
     }
+    
     public void printTreeNode2(Node node, String prefix, boolean isLeft){
         if(node != null){
             System.out.println(prefix + (isLeft ? "├──" : "└──")+ node.getValue());
