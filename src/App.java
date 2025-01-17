@@ -3,6 +3,7 @@ import main.Ejercicio_02_invert.InvertBinaryTree;
 import main.Ejercicio_03_ListLeves.ListLeves;
 import main.Ejercicio_04_depth.Depth;
 import main.Materia.Controllers.ArbolBinario;
+import main.Materia.Controllers.Graph;
 import main.Materia.Models.Node;
 
 import java.util.List;
@@ -13,14 +14,14 @@ public class App {
 
         System.out.println("Hello Profe... ");
 
-        System.out.println("\t---------- EJERCICIO 1 ----------");
-        runEjercicio1();
-        System.out.println("\n\t---------- EJERCICIO 2 ----------");
-        runEjercicio2();
-        System.out.println("\n\t---------- EJERCICIO 3 ----------");
-        runEjercicio3();
-        System.out.println("\n\t---------- EJERCICIO 4 ----------");
-        runEjercicio4();
+        // System.out.println("\t---------- EJERCICIO 1 ----------");
+        // runEjercicio1();
+        // System.out.println("\n\t---------- EJERCICIO 2 ----------");
+        // runEjercicio2();
+        // System.out.println("\n\t---------- EJERCICIO 3 ----------");
+        // runEjercicio3();
+        // System.out.println("\n\t---------- EJERCICIO 4 ----------");
+        // runEjercicio4();
 
 
 
@@ -55,6 +56,8 @@ public class App {
         // runEjercicio3();
 
         // runArbolAVL();
+
+        runGraph();
     }
 
     public static void runEjercicio1() {
@@ -137,6 +140,19 @@ public class App {
         System.out.println("La profundidad máxima del árbol binario es: " + maxDepth);
     }
 
+    public static void runGraph() {
+        Graph grafo = new Graph();
+         
+        grafo.addNode(5);
+        grafo.addNode(7);
+        grafo.addNode(9);
+        grafo.addNode(11);
+        grafo.addNode(3);
+
+        grafo.printGraph();
+        System.out.println("xxxxxxx");
+
+    }
 
     // private static void runArbolAVL() {
     //     int[] values = {10, 20, 15, 24, 9, 8, 21};
