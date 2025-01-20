@@ -5,6 +5,7 @@ import main.Ejercicio_04_depth.Depth;
 import main.Materia.Controllers.ArbolBinario;
 import main.Materia.Controllers.Graph;
 import main.Materia.Models.Node;
+import main.Materia.Models.NodeG;
 
 import java.util.List;
 
@@ -57,7 +58,9 @@ public class App {
 
         // runArbolAVL();
 
-        runGraph();
+        // runGraph();
+
+        runGraphEjercicio();
     }
 
     public static void runEjercicio1() {
@@ -141,17 +144,90 @@ public class App {
     }
 
     public static void runGraph() {
+
+        //Grafo Dirigido
         Graph grafo = new Graph();
          
-        grafo.addNode(5);
-        grafo.addNode(7);
-        grafo.addNode(9);
-        grafo.addNode(11);
-        grafo.addNode(3);
+        NodeG node0= grafo.addNode(0);
+        NodeG node1= grafo.addNode(1);
+        NodeG node2= grafo.addNode(2);
+        NodeG node3= grafo.addNode(3);
+        NodeG node4= grafo.addNode(4);
+        NodeG node5= grafo.addNode(5);
+
+        grafo.addEdge(node0,node3);
+        grafo.addEdge(node3,node2);
+        grafo.addEdge(node2,node1);
+        grafo.addEdge(node0,node5);
+        grafo.addEdge(node3,node4);
+        grafo.addEdge(node1,node0);
 
         grafo.printGraph();
-        System.out.println("xxxxxxx");
+        
+        grafo.getDFS(node0);
+        grafo.getBFS(node0);
 
+        // Grafo No Dirigido
+        Graph undirectedGraph = new Graph();
+        
+        NodeG uNode0 = undirectedGraph.addNode(0);
+        NodeG uNode1 = undirectedGraph.addNode(1);
+        NodeG uNode2 = undirectedGraph.addNode(2);
+        NodeG uNode3 = undirectedGraph.addNode(3);
+        NodeG uNode4 = undirectedGraph.addNode(4);
+        NodeG uNode5 = undirectedGraph.addNode(5);
+
+        undirectedGraph.addEdgeUndirected(uNode0, uNode3);
+        undirectedGraph.addEdgeUndirected(uNode0, uNode5);
+        undirectedGraph.addEdgeUndirected(uNode3, uNode2);
+        undirectedGraph.addEdgeUndirected(uNode3, uNode4);
+        undirectedGraph.addEdgeUndirected(uNode2, uNode1);
+        undirectedGraph.addEdgeUndirected(uNode4, uNode1);
+        undirectedGraph.addEdgeUndirected(uNode1, uNode0);
+
+        System.out.println("\nGrafo no dirigido:");
+        undirectedGraph.printGraph();
+
+        undirectedGraph.getDFS(uNode0);
+        undirectedGraph.getBFS(uNode0);
+    }
+
+    public static void runGraphEjercicio() {
+        Graph grafo = new Graph();
+
+        NodeG node0 = grafo.addNode(0);
+        NodeG node1 = grafo.addNode(1);
+        NodeG node2 = grafo.addNode(2);
+        NodeG node3 = grafo.addNode(3);
+        NodeG node4 = grafo.addNode(4);
+        NodeG node5 = grafo.addNode(5);
+        NodeG node7 = grafo.addNode(7);
+        NodeG node8 = grafo.addNode(8);
+        NodeG node9 = grafo.addNode(9);
+
+        grafo.addDirectedEdge(node0, node1);
+        grafo.addDirectedEdge(node0, node5);
+        grafo.addDirectedEdge(node1, node2);
+        grafo.addDirectedEdge(node1, node4);
+        grafo.addDirectedEdge(node1, node8);
+        grafo.addDirectedEdge(node2, node3);
+        grafo.addDirectedEdge(node3, node0);
+        grafo.addDirectedEdge(node3, node4);
+        grafo.addDirectedEdge(node3, node7);
+        grafo.addDirectedEdge(node4, node7);
+        grafo.addDirectedEdge(node7, node9);
+        grafo.addDirectedEdge(node9, node3);
+
+        System.out.println("Grafo no dirigido:");
+        grafo.printGraph();
+
+        System.out.println("\nNo direccional:");
+        grafo.getDFS(node0);
+        System.out.println("\nRealizando DFS desde el nodo 0 hasta el nodo 7:");
+        grafo.getDFSPath(node0, 7);
+
+
+        System.out.println();
     }
 
     // private static void runArbolAVL() {
